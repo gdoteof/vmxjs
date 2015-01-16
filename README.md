@@ -27,7 +27,7 @@ Each detector has associated with it a connection, and an 'image stream'.  An Im
 
 Though we are often processing video, the *Vision Engine* works primarily on a frame-by-frame basis. By associating an `ImageStream` with a detector, our vision app will be able to track objects through time; which may be critical.
 
-Again, you must explicitly associate an image stream with a detector.  Again, we provide a default ImageStream in the `$vmx` object, our default ImageStream is attached to a `<vmx-video>` custom element; which can get frames from your webcam, and provides a couple other options for input.
+Again, you must explicitly associate an image stream with a detector.  Again, we provide a default ImageStream in the `$vmx` object, our default ImageStream is attached to a `<vmx-video>` custom element; which can get frames from your webcam, and provides a couple other options for input. See `examples/hello.html` for an example usage of this custom element.
 
 ```javascript
 // We do this for you by default, provided here for clarity if you wanted to use something other than defaultStream
