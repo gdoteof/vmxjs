@@ -29,15 +29,15 @@ Though we are often processing video, the *Vision Engine* works primarily on a f
 
 Again, you must explicitly associate an image stream with a detector.  Again, we provide a default ImageStream in the `$vmx` object, our default ImageStream is attached to a `<vmx-video>` custom element; which can get frames from your webcam, and provides a couple other options for input.
 
-Once a detector has both a *connection* and an ImageStream; it can start detecting.  It's important to realize two things:
-
-- Each request to the Vision Engine is an isolated snapshot in time, returning the metainfo for a particular frame
-- We don't always have to think about the fact that each snapshot is isolated in time.
-
 ```javascript
 // We do this for you by default, provided here for clarity if you wanted to use something other than defaultStream
 $vmx.defaultDetector.setVideoSrc($vmx.defaultStream);
 ```
+
+Once a detector has both a *connection* and an ImageStream; it can start detecting.  It's important to realize two things:
+
+- Each request to the Vision Engine is an isolated snapshot in time, returning the metainfo for a particular frame
+- We don't always have to think about the fact that each snapshot is isolated in time.
 
 `$vmx.init()` is invoked when the default ImageStream (`$vmx.defaultStream`) is ready
 
