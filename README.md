@@ -13,7 +13,7 @@ Using the VMX App Builder, you can train *models* for the visual objects you are
 We call these links between your application and the *detectors*, "connections".  
 By default, the $vmx object is prepopulated with a single detector.  `$vmx.defaultDetector`.  You have to explicitly set a connection (which corresponds to a running detector on the *Vision Engine*.  
 
-``javascript
+```javascript
 var connectionUuid = "XXX-XXXX-XXXXXX-XXXX";
 $vmx.defaultDetector.set_connection({id: connectionUuid}); 
 ```
@@ -34,30 +34,30 @@ Once a detector has both a *connection* and an ImageStream; it can start detecti
 - Each request to the Vision Engine is an isolated snapshot in time, returning the metainfo for a particular frame
 - We don't always have to think about the fact that each snapshot is isolated in time.
 
-``javascript
+```javascript
 // We do this for you by default, provided here for clarity if you wanted to use something other than defaultStream
 $vmx.defaultDetector.setVideoSrc($vmx.defaultStream);
-``
+```
 
 `$vmx.init()` is invoked when the default ImageStream (`$vmx.defaultStream`) is ready
 
-``javascript
+```javascript
 $vmx.init = function(){
   //This is the entry function, it is implemented by you to be called
   //when the defaultDetector has an image stream.
   $vmx.defaultDetector.setConnection{id: connectionId};
   $vmx.defaultDetector.start();
 }
-``
+```
 
 Once a detector is *running* the vmxApi object provides JQuery-like selectors for watching what your object does over time.
 
-``javascript
+```javascript
 var enterCallback = function(param) {
   alert (param); // will create alert box that says "vmx found my eyes!"
 }
 vmxApi("eyes").onEnter(enterCallback, "vmx found my eyes!", {minTime:3000});
-``
+```
 
 There are a few things going on here:
 
