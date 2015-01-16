@@ -19,6 +19,9 @@ $vmx.init = function(){
       var trackingInfo = vmxApi("eyes").getSmooth();
       if (trackingInfo){
         $("#output").html("x: " + Math.round(trackingInfo.x) + ", y: " + Math.round(trackingInfo.y));
+        for (var i in trackingInfo){
+          $("#output").append("<pre>" + i + ": " + JSON.stringify(trackingInfo[i]) + "</pre>");
+        }
       }
     }
     window.requestAnimationFrame(draw);
