@@ -85,18 +85,18 @@ You'll notice both `onEnter` and `onLeave` take an object as their third paramet
 
 For `onEnter`, valid keys are:
 
-  - minTime - **the minimum time in milliseconds something must be "gone" before being able to enter again**
+  - `minTime` - **the minimum time in milliseconds something must be "gone" before being able to enter again**
     - default: `500`
-  - minScore - **the minimum threshold for determining whether or not**
+  - `minScore` - **the minimum threshold for determining whether or not**
     - default: `0.1`
 
 For `onLeave`, valid keys are:
 
-  - minTime - **the minimum time in milliseconds something must be "gone" before being able to enter again**
+  - `minTime` - **the minimum time in milliseconds something must be "gone" before being able to enter again**
     - default: `500`
   - `minScore` - **the minimum threshold for determining whether or not something has left (scores below this will count as having left**
     - default: `0.1`
-  - canFire  - **a boolean flag specifying whether or not the onLeave callback "can fire" before it has entered**
+  - `canFire`  - **a boolean flag specifying whether or not the onLeave callback "can fire" before it has entered**
     - default: `false`
 
 
