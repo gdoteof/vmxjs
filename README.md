@@ -71,6 +71,35 @@ There are a few things going on here:
   - `{minTime: 3000}` is an option configuration argument to `onEnter`.  `minTime` refers to the minimum amount of time an object has been out of the visual field before it can be considered to have entered again, measured in milliseconds.
 
 
+Similarly, there is an onLeave
+
+```javascript
+var leaveCallback = function(param) {
+  alert (param); // will create alert box that says "vmx found my eyes, but then they left!"
+}
+vmxApi("eyes").onEnter(leaveCallback, "vmx found my eyes, but then they left!", {minTime:3000});
+```
+
+
+You'll notice both `onEnter` and `onLeave` take an object as their third parameter.  This object is a *configuration* object.
+
+For `onEnter`, valid keys are:
+
+  - minTime - **the minimum time in milliseconds something must be "gone" before being able to enter again**
+    - default: 500
+  - minScore - **the minimum threshold for determining whether or not
+    - default: 0.1
+
+For `onLeave`, valid keys are:
+
+  - minTime - **the minimum time in milliseconds something must be "gone" before being able to enter again**
+    - `default: `500`
+  - minScore - **the minimum threshold for determining whether or not something has left (scores below this will count as having left**
+    - `default`: `0.1`
+  - canFire  - **a boolean flag specifying whether or not the onLeave callback "can fire" before it has entered**
+    - `default`: `false`
+
+
 Any anytime, you can get the coordinates of the visual object; tracked in real time with client-side tracking.
 
 ```javascript
