@@ -68,8 +68,7 @@ There are a few things going on here:
   - `enterCallback` is a reference to a function that you want to run when "eyes" enters the visual field
   - The second argument to `onEnter` will be sent as an argument to the callback in the first paramater
     - `"vmx found my eyes!"` is an arbitrary argument to `enterCallback`. 
-  - `{minTime: 3000}` is an option configuration argument to `onEnter`.  `minTime` refers to the minimum amount of time an object has been out of the visual field before it can be considered to have entered again.
-    - this is an important point: if you have an expensive action you need to take when some particular thing enters the visual field, you don't want to do it again if the object gets occluded for a slight moment.
+  - `{minTime: 3000}` is an option configuration argument to `onEnter`.  `minTime` refers to the minimum amount of time an object has been out of the visual field before it can be considered to have entered again, measured in milliseconds.
 
 
 Any anytime, you can get the coordinates of the visual object; tracked in real time with client-side tracking.
@@ -79,4 +78,4 @@ var coordinates = vmxApi("eyes").getSmooth();
 //coordinates has x1, y1, x2, y2, representing the top left and bottom-right corners of the box associated with "eyes'
 ```
 
-see `examples/coordinates.html` and `examples/coordinates.js` to see how to combine with this `window.requestAnimationFrame`
+see `examples/coordinates.html` and `examples/coordinates.js` to see how to combine with this `window.requestAnimationFrame` 
