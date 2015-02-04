@@ -1,0 +1,27 @@
+<html ng-app="vmx">
+  <head>
+    <script src="../../vmx.min.js"></script>
+    <link href="../../vmx.min.css" rel="stylesheet">
+    <link href="../../vendor.min.css" rel="stylesheet">
+    <script src="speak.js"></script>
+  <script type="text/javascript" src="mespeak.js"></script>
+  <script type="text/javascript">
+    meSpeak.loadConfig("mespeak_config.json");
+    meSpeak.loadVoice("en.json");
+  </script>
+
+  </head>
+
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <vmx-video width="320px" height="240px"></vmx-video>
+            </div>
+            <div class="col-md-4 col-sm-8">
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
