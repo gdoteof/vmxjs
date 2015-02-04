@@ -68,36 +68,8 @@ There are a few things going on here:
   - `enterCallback` is a reference to a function that you want to run when "eyes" enters the visual field
   - The second argument to `onEnter` will be sent as an argument to the callback in the first paramater
     - `"vmx found my eyes!"` is an arbitrary argument to `enterCallback`. 
-  - `{minTime: 3000}` is an option configuration argument to `onEnter`.  `minTime` refers to the minimum amount of time an object has been out of the visual field before it can be considered to have entered again, measured in milliseconds.
-
-
-Similarly, there is an onLeave
-
-```javascript
-var leaveCallback = function(param) {
-  alert (param); // will create alert box that says "vmx found my eyes, but then they left!"
-}
-vmxApi("eyes").onEnter(leaveCallback, "vmx found my eyes, but then they left!", {minTime:3000});
-```
-
-
-You'll notice both `onEnter` and `onLeave` take an object as their third parameter.  This object is a *configuration* object.
-
-For `onEnter`, valid keys are:
-
-  - `minTime` - **the minimum time in milliseconds something must be "gone" before being able to enter again**
-    - default: `500`
-  - `minScore` - **the minimum threshold for determining whether or not**
-    - default: `0.1`
-
-For `onLeave`, valid keys are:
-
-  - `minTime` - **the minimum time in milliseconds something must be "gone" before being able to enter again**
-    - default: `500`
-  - `minScore` - **the minimum threshold for determining whether or not something has left (scores below this will count as having left**
-    - default: `0.1`
-  - `canFire`  - **a boolean flag specifying whether or not the onLeave callback "can fire" before it has entered**
-    - default: `false`
+  - `{minTime: 3000}` is an option configuration argument to `onEnter`.  `minTime` refers to the minimum amount of time an object has been out of the visual field before it can be considered to have entered again.
+    - this is an important point: if you have an expensive action you need to take when some particular thing enters the visual field, you don't want to do it again if the object gets occluded for a slight moment.
 
 
 Any anytime, you can get the coordinates of the visual object; tracked in real time with client-side tracking.
@@ -107,4 +79,4 @@ var coordinates = vmxApi("eyes").getSmooth();
 //coordinates has x1, y1, x2, y2, representing the top left and bottom-right corners of the box associated with "eyes'
 ```
 
-see `examples/coordinates.html` and `examples/coordinates.js` to see how to combine with this `window.requestAnimationFrame` 
+see `examples/coordinates.html` and `examples/coordinates.js` to see how to combine with this `window.requestAnimationFrame`
