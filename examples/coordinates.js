@@ -19,9 +19,6 @@ $vmx.init = function(){
       var trackingInfo = vmxApi("eyes").getSmooth();
       if (trackingInfo){
         $("#output").html("x: " + Math.round(trackingInfo.x) + ", y: " + Math.round(trackingInfo.y));
-        for (var i in trackingInfo){
-          $("#output").append("<pre>" + i + ": " + JSON.stringify(trackingInfo[i]) + "</pre>");
-        }
       }
     }
     window.requestAnimationFrame(draw);
@@ -37,7 +34,7 @@ $vmx.init = function(){
   .update()
   .then(function(runningDetectors){
     // This is the UUID for the model I created which I called "eyes"
-    var myModelUuid = 'b2730105-5a62-4b51-9973-119a10bd3995';
+    var myModelUuid = '05274552-8019-45e0-bd49-239780eb37c1';
 
     // Check all the running detectors for the model we are interested in
     for (var conn in runningDetectors){
