@@ -1,4 +1,5 @@
 var SERVER = "http://104.236.125.112:8080/"
+//var SERVER = "http://localhost:8080/"
 
 
 
