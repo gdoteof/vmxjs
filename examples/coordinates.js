@@ -1,4 +1,4 @@
-var SERVER = "http://localhost:3000/"
+var SERVER = "http://104.236.125.112:8080/"
 
 
 
@@ -34,7 +34,7 @@ $vmx.init = function(){
   .update()
   .then(function(runningDetectors){
     // This is the UUID for the model I created which I called "eyes"
-    var myModelUuid = '05274552-8019-45e0-bd49-239780eb37c1';
+    var myModelUuid = '371d0baa-aa79-489e-9b12-da3335905a13';
 
     // Check all the running detectors for the model we are interested in
     for (var conn in runningDetectors){
